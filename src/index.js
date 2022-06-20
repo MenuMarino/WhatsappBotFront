@@ -5,8 +5,10 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import axios from 'axios';
 
-axios.defaults.baseURL =
-  'https://9b3c-2001-1388-91-61b5-20c1-b4c4-475f-71ee.ngrok.io';
+axios.defaults.baseURL = 'http://localhost:5000';
+axios.defaults.headers.common['Authorization'] =
+  '4u7x!z%C*F-JaNdRgUkXp2s5v8y/B?D(';
+axios.defaults.withCredentials = true;
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
