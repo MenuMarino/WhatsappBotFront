@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Table from './Table';
+import { useNavigate } from 'react-router-dom';
 
 export default function Data() {
+  const navigate = useNavigate();
   const [values, setValues] = useState({
     headers: [],
     data: [],
@@ -17,7 +19,11 @@ export default function Data() {
           headers: response.data.data.headers,
           data: response.data.data.data,
         }));
-      } catch (e) {}
+      } catch (e) {
+        if (e.response.status === 401) {
+          navigate('/');
+        }
+      }
     };
     fetchData();
   }, []);
