@@ -6,8 +6,6 @@ import reportWebVitals from './reportWebVitals';
 import axios from 'axios';
 
 axios.defaults.baseURL = 'http://localhost:5000';
-axios.defaults.headers.common['Authorization'] =
-  '4u7x!z%C*F-JaNdRgUkXp2s5v8y/B?D(';
 axios.defaults.withCredentials = true;
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
